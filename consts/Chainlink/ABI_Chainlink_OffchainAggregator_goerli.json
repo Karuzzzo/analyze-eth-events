@@ -1,0 +1,43 @@
+[
+	{
+		"inputs": [],
+		"name": "last_sender",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "_report",
+				"type": "bytes"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "_rs",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "_ss",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "_rawVs",
+				"type": "bytes32"
+			}
+		],
+		"name": "transmit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

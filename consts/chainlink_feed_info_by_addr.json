@@ -1,0 +1,1403 @@
+{
+    "0x7De0d6fce0C128395C488cb4Df667cdbfb35d7DE": {
+        "pair_name": "USDT / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7": {
+                "price_from": "0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46",
+                "symbol": "USDT",
+                "decimals": 6,
+                "aave": true
+            }
+        }
+    },
+    "0x81076d6Ff2620Ea9Dd7bA9c1015f0d09A3A732E6": {
+        "pair_name": "BTC / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4"
+        ],
+        "linked_tokens": {
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599": {
+                "price_from": "0xdeb288F737066589598e9214E782fa5A8eD689e8",
+                "symbol": "WBTC",
+                "decimals": 8,
+                "aave": true
+            }
+        }
+    },
+    "0xAa5aa80e416f9d32ffE6C390e24410d02D203F70": {
+        "pair_name": "YFI / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0x9850E11D2c33B43AB80d478CCC69042b46ab3857",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F"
+        ],
+        "linked_tokens": {
+            "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e": {
+                "price_from": "0x7c5d4F8345e66f68099581Db340cd65B078C41f4",
+                "symbol": "YFI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x6B39588D2FC7990CC81544DFd4674C909E9EFeea": {
+        "pair_name": "ZRX / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0x7744F58E29849Bc7C804e4F4b88d0CE12f068513"
+        ],
+        "linked_tokens": {
+            "0xE41d2489571d322189246DaFA5ebDe1F4699F498": {
+                "price_from": "0x2Da4983a622a8498bb1a21FaE9D8F6C664939962",
+                "symbol": "ZRX",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xc1D1d0Da0fCf78157EA25D0E64e3BE679813a1F7": {
+        "pair_name": "UNI / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984": {
+                "price_from": "0xD6aA3D25116d8dA79Ea0246c4826EB951872e02e",
+                "symbol": "UNI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xdF0da6B3d19E4427852F2112D0a963d8A158e9c7": {
+        "pair_name": "AAVE / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9": {
+                "price_from": "0x6Df09E975c830ECae5bd4eD9d90f3A95a4f88012",
+                "symbol": "AAVE",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x821f24DAcA9Ad4910c1EdE316D2713fC923Da698": {
+        "pair_name": "BAT / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xE3cd128883f2954D78923487B67Ea7C4F25C7C46",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x0D8775F648430679A709E98d2b0Cb6250d2887EF": {
+                "price_from": "0x0d16d4528239e9ee52fa531af613AcdB23D88c94",
+                "symbol": "BAT",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x5952c7F1Ab270D22d677762Be3dAd0BA9e5cd23d": {
+        "pair_name": "BUSD / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53": {
+                "price_from": "0x614715d2Af89E6EC99A233818275142cE88d1Cfd",
+                "symbol": "BUSD",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x158228e08C52F3e2211Ccbc8ec275FA93f6033FC": {
+        "pair_name": "DAI / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4"
+        ],
+        "linked_tokens": {
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
+                "price_from": "0x773616E4d11A78F511299002da57A0a94577F1f4",
+                "symbol": "DAI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xdBd66e8D31F506e0cc8CB2f346De4C7FA3f655DE": {
+        "pair_name": "ENJ / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0x9850E11D2c33B43AB80d478CCC69042b46ab3857",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c": {
+                "price_from": "0x24D9aB51950F3d62E9144fdC2f3135DAA6Ce8D1B",
+                "symbol": "ENJ",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xB3B1882C0A7eB5097F12547bCD20Dc6FAE7aC8a6": {
+        "pair_name": "KNC / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0xdd974D5C2e2928deA5F71b9825b8b646686BD200": {
+                "price_from": "0x656c0544eF4C98A6a98491833A89204Abb045d6b",
+                "symbol": "KNC",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xbba12740DE905707251525477bAD74985DeC46D2": {
+        "pair_name": "LINK / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x514910771AF9Ca656af840dff83E8264EcF986CA": {
+                "price_from": "0xDC530D9457755926550b59e8ECcdaE7624181557",
+                "symbol": "LINK",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x46b77070f9256523c2F31c333b72C3E102f8A8A7": {
+        "pair_name": "MANA / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x0F5D2fB29fb7d3CFeE444a200298f468908cC942": {
+                "price_from": "0x82A44D92D6c329826dc557c5E1Be6ebeC5D5FeB9",
+                "symbol": "MANA",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xFFC14A3B26708545BcCf8e915e2e8348123f5460": {
+        "pair_name": "MKR / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0x9850E11D2c33B43AB80d478CCC69042b46ab3857",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016"
+        ],
+        "linked_tokens": {
+            "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2": {
+                "price_from": "0x24551a8Fb2A7211A25a17B1481f043A8a8adC7f2",
+                "symbol": "MKR",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xEe34b3Ce92A6B635450B9cC6FAa976F70a106BE7": {
+        "pair_name": "REN / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x408e41876cCCDC0F92210600ef50372656052a38": {
+                "price_from": "0x3147D7203354Dc06D9fd350c7a2437bcA92387a4",
+                "symbol": "REN",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xBAFe3CB0E563E914806A99D547bdBF2Cfcf5fDF6": {
+        "pair_name": "SNX / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x7744F58E29849Bc7C804e4F4b88d0CE12f068513"
+        ],
+        "linked_tokens": {
+            "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F": {
+                "price_from": "0x79291A9d692Df95334B1a0B3B4AE6bC606782f8c",
+                "symbol": "SNX",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x45bb69B89D60878d1e42522342fFCa9F2077dD84": {
+        "pair_name": "SUSD / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51": {
+                "price_from": "0x8e0b7e6062272B5eF4524250bFFF8e5Bd3497757",
+                "symbol": "sUSD",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x9534df8F2C9289bbDB0c736E9FeF402B20f1828E": {
+        "pair_name": "TUSD / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4"
+        ],
+        "linked_tokens": {
+            "0x0000000000085d4780B73119b644AE5ecd22b376": {
+                "price_from": "0x3886BA987236181D98F2401c507Fb8BeA7871dF2",
+                "symbol": "TUSD",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xe5BbBdb2Bb953371841318E1Edfbf727447CeF2E": {
+        "pair_name": "USDC / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0x9850E11D2c33B43AB80d478CCC69042b46ab3857",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x7744F58E29849Bc7C804e4F4b88d0CE12f068513"
+        ],
+        "linked_tokens": {
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
+                "price_from": "0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+                "symbol": "USDC",
+                "decimals": 6,
+                "aave": true
+            }
+        }
+    },
+    "0x7f67Ca2ce5299a67acd83D52A064C5b8e41dDb80": {
+        "pair_name": "CRV / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x9850E11D2c33B43AB80d478CCC69042b46ab3857",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0x7744F58E29849Bc7C804e4F4b88d0CE12f068513",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0xD533a949740bb3306d119CC777fa900bA034cd52": {
+                "price_from": "0x8a12Be339B0cD1829b91Adc01977caa5E9ac121e",
+                "symbol": "CRV",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x37bC7498f4FF12C19678ee8fE19d713b87F6a9e6": {
+        "pair_name": "ETH / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x571476978D2eE5493199A3458Df3aA14afeAdED8",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd": {
+                "price_from": "0xEc6f4Cd64d28Ef32507e2dc399948aAe9Bbedd7e",
+                "symbol": "GUSD",
+                "decimals": 2,
+                "aave": true
+            },
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "ETH",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x2f2c0C1727Ce8C429A237DDFBBb87357893fBD5D": {
+        "pair_name": "BAL / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0xba100000625a3754423978a60c9317c58a424e3D": {
+                "price_from": "0xC1438AA3823A6Ba0C159CfA8D98dF5A994bA120b",
+                "symbol": "BAL",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xd01BBB3Afed2cb5ca92Ca3834d441dc737F0Da70": {
+        "pair_name": "SUSHI / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA"
+        ],
+        "linked_tokens": {
+            "0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272": {
+                "price_from": "0x9b26214bEC078E68a394AaEbfbffF406Ce14893F",
+                "symbol": "xSUSHI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x9965AD91B4877d29c246445011Ce370b3890C5C2": {
+        "pair_name": "FIL / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA"
+        ],
+        "linked_tokens": {
+            "0xD5147bc8e386d91Cc5DBE72099DAC6C9b99276F5": {
+                "price_from": "0x0606Be69451B1C9861Ac6b3626b99093b713E801",
+                "symbol": "renFIL",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x8d6d808eC1f8803b54e2286BD6992f5601fCF3a8": {
+        "pair_name": "RAI / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4"
+        ],
+        "linked_tokens": {
+            "0x03ab458634910AaD20eF5f1C8ee96F1D6ac54919": {
+                "price_from": "0x4ad7B025127e89263242aB68F0f9c4E5C033B489",
+                "symbol": "RAI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xb92EE05E7514FfEDDDbcd76F5e3064691F6eC79e": {
+        "pair_name": "AMPL / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29"
+        ],
+        "linked_tokens": {
+            "0xD46bA6D942050d489DBd938a2C909A5d5039A161": {
+                "price_from": "0x492575FDD11a0fCf2C6C719867890a7648d526eB",
+                "symbol": "AMPL",
+                "decimals": 9,
+                "aave": true
+            }
+        }
+    },
+    "0x8034d486Fc2620F87A9C32a1fB746D20Ed9BFB96": {
+        "pair_name": "PAX / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170"
+        ],
+        "linked_tokens": {
+            "0x8E870D67F660D95d5be530380D0eC0bd388289E1": {
+                "price_from": "0x3a08ebBaB125224b7b6474384Ee39fBb247D2200",
+                "symbol": "USDP",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x36e4f71440EdF512EB410231e75B9281d4FcFC4c": {
+        "pair_name": "DPI / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x265b3Aaeb858F32Fe18CFc28EEA21977Fc379F3C",
+            "0x571476978D2eE5493199A3458Df3aA14afeAdED8",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0x686beC83b59F8b23A6129f03550A3Aad245a543C",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0x9741569DEDB1E0cB204f2dF7f43f7a52bB49ba3A"
+        ],
+        "linked_tokens": {
+            "0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b": {
+                "price_from": "0x029849bbc0b1d93b85a8b6190e979fd38F5760E2",
+                "symbol": "DPI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x56f98706C14DF5C290b02Cec491bB4c20834Bb51": {
+        "pair_name": "FRAX / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4"
+        ],
+        "linked_tokens": {
+            "0x853d955aCEf822Db058eb8505911ED77F175b99e": {
+                "price_from": "0x14d04Fff8D21bd62987a5cE9ce543d2F1edF5D3E",
+                "symbol": "FRAX",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x4bE991B4d560BBa8308110Ed1E0D7F8dA60ACf6A": {
+        "pair_name": "FEI / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1"
+        ],
+        "linked_tokens": {
+            "0x956F47F50A910163D8BF957Cf5846D573E7f87CA": {
+                "price_from": "0x7F0D2c2838c6AC24443d13e23d99490017bDe370",
+                "symbol": "FEI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x716BB759A5f6faCdfF91F0AfB613133d510e1573": {
+        "pair_name": "STETH / ETH",
+        "pair_decimals": 18,
+        "transmitters": [
+            "0x9741569DEDB1E0cB204f2dF7f43f7a52bB49ba3A",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x9850E11D2c33B43AB80d478CCC69042b46ab3857"
+        ],
+        "linked_tokens": {
+            "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
+                "price_from": "0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+                "symbol": "stETH",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x780f1bD91a5a22Ede36d4B2b2c0EcCB9b1726a28": {
+        "pair_name": "ENS / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xf6E7Dba31369024F0044F24ce5dc2C612B298EDd",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0x7744F58E29849Bc7C804e4F4b88d0CE12f068513"
+        ],
+        "linked_tokens": {
+            "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72": {
+                "price_from": "0xd4641b75015E6536E8102D98479568D05D7123Db",
+                "symbol": "ENS",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xd90CA9ac986e453CF51d958071D68B82d17a47E6": {
+        "pair_name": "BAT / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA"
+        ],
+        "linked_tokens": {
+            "0x0D8775F648430679A709E98d2b0Cb6250d2887EF": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "BAT",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xDEc0a100eaD1fAa37407f0Edc76033426CF90b82": {
+        "pair_name": "DAI / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f"
+        ],
+        "linked_tokens": {
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "DAI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x9AdF01321833A5Cba51B9f8A4C420C7e62481Ae5": {
+        "pair_name": "REP / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xE3cd128883f2954D78923487B67Ea7C4F25C7C46"
+        ],
+        "linked_tokens": {
+            "0x1985365e9f78359a9B6AD760e32412f4a445E862": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "REP",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xAe74faA92cB67A95ebCAB07358bC222e33A34dA7": {
+        "pair_name": "BTC / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "WBTC",
+                "decimals": 8,
+                "aave": true
+            }
+        }
+    },
+    "0x3d47eF9690Bd00C77c568b73140dC20F34453766": {
+        "pair_name": "ZRX / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26"
+        ],
+        "linked_tokens": {
+            "0xE41d2489571d322189246DaFA5ebDe1F4699F498": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "ZRX",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x68577f915131087199Fe48913d8b416b3984fd38": {
+        "pair_name": "UNI / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x7744F58E29849Bc7C804e4F4b88d0CE12f068513"
+        ],
+        "linked_tokens": {
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "UNI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x6eaC850f531d0588c0114f1E93F843B78669E6d2": {
+        "pair_name": "COMP / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0xB5b90F596341127dE460465dEA9b28b8a6Bd1984",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x7744F58E29849Bc7C804e4F4b88d0CE12f068513",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "COMP",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xDfd03BfC3465107Ce570a0397b247F546a42D0fA": {
+        "pair_name": "LINK / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x57CD4848b12469618b689163f507817940AccA02",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x0312EA121df0a323fF535B753172736cc9d53d13",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA"
+        ],
+        "linked_tokens": {
+            "0x514910771AF9Ca656af840dff83E8264EcF986CA": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "LINK",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x908EDc7E1974Ecab1cA7164424BC4Cac287D83Ad": {
+        "pair_name": "MKR / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0x6878fb222FfF9A2fE3C0Cde77D281916f8D296b3",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xD22c87Dc7a3F12dcBB75CEbDA2e96f6766AE114F",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x64c735D72EAB90C04da523B6b9895773ACb60F5D",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xf34aC04a28F7CB5324A167C96B24ADE9c742B44f",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524"
+        ],
+        "linked_tokens": {
+            "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "MKR",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x7213536a36094cD8a768a5E45203Ec286Cba2d74": {
+        "pair_name": "SUSHI / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x265b3Aaeb858F32Fe18CFc28EEA21977Fc379F3C"
+        ],
+        "linked_tokens": {
+            "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "SUSHI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xe3f0dEdE4B499c07e12475087AB1A084b5F93bc0": {
+        "pair_name": "AAVE / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x70bC61658615725A82D5e78FF0066BFCb1b98988",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0xa938d77590aF1d98BaB7dc4a0bde594fC3F9c403",
+            "0xEdBED9F5dEA03dD0ec484577C41502af68B7c46a",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0xF07131F578a5F708AE2CCB9faF98458099E0FFB4",
+            "0x8F3Ab0e87B70a57bD4980111a99a1b2c4b8334F4",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0xBbf078A8849D74623e36E6DBBdC8e0a35E657C26",
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xC4b732Fd121F2f3783A9Ac2a6C62fD535FD13FdA",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4"
+        ],
+        "linked_tokens": {
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "AAVE",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x8a4D74003870064d41D4f84940550911FBfCcF04": {
+        "pair_name": "YFI / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xCF4Be57aA078Dc7568C631BE7A73adc1cdA992F8",
+            "0x5a8216a9c47ee2E8Df1c874252fDEe467215C25b",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0x5565b5362FF9f468bA2f144f38b87187C9a010A8",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x3C4ad65F5b4884397e1F09596c7ac7F8F95b3fF3",
+            "0xcC29be4Ca92D4Ecc43C8451fBA94C200B83991f6",
+            "0x9cFAb1513FFA293E7023159B3C7A4C984B6a3480",
+            "0x8b1d49a93A84B5dA0917a1ed42D8a3E191C28524",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x7BFb89db2d7217c57C3Ad3d4B55826eFD17dC2e9",
+            "0x43793ee58E0a3D920e3e4a115A9FA07dc4B09715",
+            "0xe3E0596AC55Ae6044b757baB27426F7dC9e018d4"
+        ],
+        "linked_tokens": {
+            "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "YFI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x1D244648d5a63618751d006886268Ae3550d0Dfd": {
+        "pair_name": "FEI / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xFa0E4F48a369BB3eCBCEe0B5119379EA8D1bcF29",
+            "0xb976d01275B809333E3EfD76D1d31fE9264466D0",
+            "0xF42336e35D5C1D1D0DB3140E174BcFc3945f6822",
+            "0x982fa4d5F5C8C0063493AbE58967cA3B7639F10F",
+            "0xc61a7e5a04A5d32ffe8e01f77Cb39253bf21D2aC",
+            "0x61317C73d0225b2E37140fb9664d607B450613C6",
+            "0x2a4a7afA40a9D03B425752fb4cFd5f0FF5b3964C",
+            "0xDbfea8D5822141c13f92CaA06EB94d0F3d67C243",
+            "0xddEB598fe902A13Cc523aaff5240e9988eDCE170",
+            "0xf16e77a989529AA4C58318acEe8A1548Df3fcCc1",
+            "0x7663C5790E1eBf04197245d541279D13f3c2f362",
+            "0xc74cE67BfC623c803D48AFc74a09A6FF6b599003",
+            "0xCe859E48f6cE9834a119Ba04FdC53c1D4F1082A7",
+            "0x218B5a7861dBf368D09A84E0dBfF6C6DDbf99DB8",
+            "0x5a6fCc02D8c50eA58a22115A7c4608b723030016",
+            "0xDdE59ceeC7A2cC8B2bD78199877BA22018966813"
+        ],
+        "linked_tokens": {
+            "0x956F47F50A910163D8BF957Cf5846D573E7f87CA": {
+                "price_from": "0x046728da7cb8272284238bD3e47909823d63A58D",
+                "symbol": "FEI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+[
+	{
+		"inputs": [],
+		"name": "counter",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_liquidationContractAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_debtAsset",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_borrower",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_collateralAsset",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_debtAssetAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_flashloanWETHAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_market",
+				"type": "uint256"
+			}
+		],
+		"name": "flashloanLiquidate",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	}
+]

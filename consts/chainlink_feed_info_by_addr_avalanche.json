@@ -1,0 +1,194 @@
+{
+    "0x9450A29eF091B625e976cE66f2A5818e20791999": {
+        "pair_name": "AVAX / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c"
+        ],
+        "linked_tokens": {
+            "null": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "qiAVAX",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0x154baB1FC1D87fF641EeD0E9Bc0f8a50D880D2B6": {
+        "pair_name": "BTC / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2"
+        ],
+        "linked_tokens": {
+            "0x50b7545627a5162F82A992c33b87aDc75187B218": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "WBTC.e",
+                "decimals": 8,
+                "aave": true
+            }
+        }
+    },
+    "0xEfaa69f461E0aaf0be1798b01371Daf14AC55eA8": {
+        "pair_name": "ETH / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2",
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC"
+        ],
+        "linked_tokens": {
+            "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "WETH.e",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xb8AEB9160385fa2D1B63B5E88351238593ba0127": {
+        "pair_name": "USDT / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c",
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2"
+        ],
+        "linked_tokens": {
+            "0xc7198437980c041c805A1EDcbA50c1Ce5db95118": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "USDT.e",
+                "decimals": 6,
+                "aave": true
+            }
+        }
+    },
+    "0xA2e5d3254F7d6E8C051Afb7F2aeea0dABf21F750": {
+        "pair_name": "LINK / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c"
+        ],
+        "linked_tokens": {
+            "0x5947BB275c521040051D82396192181b413227A3": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "LINK.e",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xCC4633a1a85d553623bAC7945Bd87CFad6E6a8c8": {
+        "pair_name": "DAI / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2",
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c"
+        ],
+        "linked_tokens": {
+            "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "DAI.e",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    },
+    "0xfBd998938f8f7210eEC3D1e12E80A10972F02aEd": {
+        "pair_name": "USDC / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2"
+        ],
+        "linked_tokens": {
+            "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "USDC.e",
+                "decimals": 6,
+                "aave": true
+            }
+        }
+    },
+    "0xB6f7e0129439829a3679BD06102fDCAA41ebeE5e": {
+        "pair_name": "QI / USD",
+        "pair_decimals": 8,
+        "transmitters": [
+            "0x8EF62f0B88286AAF46142cacBB0058bf1F74607d",
+            "0x7666D648f6D0909DbCb010218d713c5CE576149A",
+            "0x89da56e409dDef3C52BdCfBeFC9b595870880bAA",
+            "0xA317eBD3dA5C29b6EA01742bbEa6BaCCEB10A297",
+            "0x5b17Db9668BB9CbFe87F416b4da1132b5193959D",
+            "0x574A2f48049D962cF2e66d4381823Af93817Cd81",
+            "0x8772Ecc810a04627d58eBC1Db2bBc27bF90F6bb2",
+            "0x0499BEA33347cb62D79A9C0b1EDA01d8d329894c",
+            "0x69Dd5981be8F53828b9A305666F91133dfc0FdD2",
+            "0xFb821dfde8F43ed6fbf970153585038b0b3B49CC"
+        ],
+        "linked_tokens": {
+            "0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5": {
+                "price_from": "0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B",
+                "symbol": "QI",
+                "decimals": 18,
+                "aave": true
+            }
+        }
+    }
+}
