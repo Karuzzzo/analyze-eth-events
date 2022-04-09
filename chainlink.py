@@ -18,19 +18,12 @@ CHAINLINK_FEED_ABI = json.load(open("consts/Chainlink/ABI_Chainlink_OffchainAggr
 # LOADING FEEDS DATA FROM JSON FILE
 # file can be rebuilt by "chainlink_renew_and_store_feeds_info_in_json()" function
 FEED_TO_PAIR_JSON_FILE = "consts/chainlink_feed_info_by_addr.json"
-FEED_TO_PAIR_JSON_FILE_AVALANCHE = "consts/chainlink_feed_info_by_addr_avalanche.json"
 
 global FEEDS_DATA_BY_ADDR
 FEEDS_DATA_BY_ADDR = json.load(open(FEED_TO_PAIR_JSON_FILE))
 
-global FEEDS_DATA_BY_ADDR_AVALANCHE
-FEEDS_DATA_BY_ADDR_AVALANCHE = json.load(open(FEED_TO_PAIR_JSON_FILE_AVALANCHE))
-
 def get_feeds_data_by_addr():
     return FEEDS_DATA_BY_ADDR
-
-def get_feeds_data_by_addr_avalanche():
-    return FEEDS_DATA_BY_ADDR_AVALANCHE
 
 def get_asset_info(token_addr, market_symbol='ETH'):
     asset_info = None
@@ -267,16 +260,6 @@ def get_token_symbol(token_contract):
     return token_symbol
 
 #  used only manually to store parsed data into FEED_TO_PAIR_JSON_FILE
-def generate_chainlink_price_feeds_data_json_avalanche(w3):
-    global FEEDS_DATA_BY_ADDR_AVALANCHE
-    FEEDS_DATA_BY_ADDR_AVALANCHE = {}
-
-    get_benqi_tokens_info(w3)
-    with open(FEED_TO_PAIR_JSON_FILE_AVALANCHE, 'w', encoding='utf-8') as f:
-        json.dump(FEEDS_DATA_BY_ADDR_AVALANCHE, f, ensure_ascii=False, indent=4)
-
-
-#  used only manually to store parsed data into FEED_TO_PAIR_JSON_FILE
 def generate_chainlink_price_feeds_data_json(w3):
     global FEEDS_DATA_BY_ADDR
     FEEDS_DATA_BY_ADDR = {}
@@ -388,80 +371,6 @@ def get_compound_tokens_info(w3):
                 'decimals': token_decimals,
                 'aave': True
             }
-
-
-# BENQI BENQI BENQI BENQI BENQI BENQI     
-def get_benqi_tokens_info(w3):
-    BENQI_ORACLE_ADDR = '0x316aE55EC59e0bEb2121C0e41d4BDef8bF66b32B'
-    BENQI_ORACLE_ABI = json.load(open("consts/BENQI/ABI_benqi_oracle.json"))
-    benqi_oracle_contract = w3.eth.contract(address=BENQI_ORACLE_ADDR, abi=BENQI_ORACLE_ABI)
-
-    BENQI_COMPTROLLER_ADDR = '0x486Af39519B4Dc9a7fCcd318217352830E8AD9b4'
-    BENQI_COMPTROLLER_ABI = json.load(open("consts/Compound/ABI_compound_comptroller.json"))
-    
-    benqi_comptroller_contract = w3.eth.contract(address=BENQI_COMPTROLLER_ADDR, abi=BENQI_COMPTROLLER_ABI)
-    # List of cTokens used in protocol
-    benqi_all_reserve_tokens = benqi_comptroller_contract.functions.getAllMarkets().call()
-    ABI_USDC = json.load(open("consts/ABI_USDC.json"))
-    ABI_CTOKEN = json.load(open("consts/Compound/ABI_compound_ctoken.json"))
-    ABI_VALIDATOR_PROXY = json.load(open("consts/BENQI/ABI_validator_proxy.json"))
-    ABI_CHAINLINK_AGGREGATOR = json.load(open("consts/Chainlink/ABI_Chainlink_OffchainAggregator.json"))
-    
-    for ctoken_addr in benqi_all_reserve_tokens:
-
-        ctoken_contract = w3.eth.contract(address=ctoken_addr, abi=ABI_CTOKEN)
-        token_symbol = None
-        token_decimals = None
-        token_addr = None
-        if ctoken_addr == '0x5C0401e81Bc07Ca70fAD469b451682c0d747Ef1c':
-            # We get underlying token, TODO parse and save ctoken data aswell        
-            token_symbol = 'qiAVAX'
-            token_decimals = 18
-        else:
-            token_addr = ctoken_contract.functions.underlying().call()
-            token_contract = w3.eth.contract(address=token_addr, abi=ABI_USDC)
-            token_symbol = get_token_symbol(token_contract)
-            token_decimals = token_contract.functions.decimals().call()
-        # Making our way to the chainlink price feeds
-        reporter = benqi_oracle_contract.functions.getFeed(token_symbol).call()
-        # Reporter is a proxy between Chainlink and BENQI oracle (0xDe2Fa230d4C05ec0337D7b4fc10e16f5663044B0)
-        proxy_contract = w3.eth.contract(address=reporter, abi=ABI_VALIDATOR_PROXY)
-        feed_addr = proxy_contract.functions.aggregator().call()
-
-        eac_aggr_proxy_contract = w3.eth.contract(address=feed_addr, abi=ABI_CHAINLINK_AGGREGATOR)
-                
-        feed_decimals = eac_aggr_proxy_contract.functions.decimals().call()
-        feed_name = eac_aggr_proxy_contract.functions.description().call()
-        feed_transmitters = eac_aggr_proxy_contract.functions.transmitters().call()
-            
-        print(f"BENQI token {token_symbol} {token_addr} with decimals {token_decimals} receives price from "
-              f"aggregator or proxy {BENQI_ORACLE_ADDR} that proxies latestAnswer() "
-              f"from feed {feed_name} at {feed_addr} with decimals {feed_decimals}")
-        
-        # continue    
-        if FEEDS_DATA_BY_ADDR_AVALANCHE.get(feed_addr) is None:
-            FEEDS_DATA_BY_ADDR_AVALANCHE[feed_addr] = {
-                'pair_name': feed_name,
-                'pair_decimals': feed_decimals,
-                'transmitters': feed_transmitters,
-                'linked_tokens': {
-                    token_addr: {
-                        # It's always one source of prices for Compound
-                        'price_from': BENQI_ORACLE_ADDR,
-                        'symbol': token_symbol,
-                        'decimals': token_decimals,
-                        'aave': True
-                    }
-                }
-            }
-        else:
-            FEEDS_DATA_BY_ADDR_AVALANCHE[feed_addr]['linked_tokens'][token_addr] = {
-                'price_from': BENQI_ORACLE_ADDR,
-                'symbol': token_symbol,
-                'decimals': token_decimals,
-                'aave': True
-            }
-
 
 
 # AAVE AAVE AAVE AAVE AAVE AAVE AAVE AAVE AAVE    
