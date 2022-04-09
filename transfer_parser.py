@@ -46,9 +46,10 @@ def analyze_biggest_transfer(w3, token_transfer_events):
             transfer_amount_eth = token_amount / (10 ** asset_info['decimals'])
         else: # decimals for token and for X / ETH price oracle is always 18
             transfer_amount_eth = (token_amount * transfer_price_info['answer']) / (10 ** (asset_info['decimals'] + 18))
-
         # Finding the biggest transfer in whole transaction (Usually there is 2-3)
         if biggest_transfer_eth < transfer_amount_eth:
+            biggest_transfer_eth = transfer_amount_eth
+
             transfer_information['amount'] = token_amount
             transfer_information['decimals'] = asset_info['decimals']
             transfer_information['symbol'] = token_symbol

@@ -62,6 +62,7 @@ def get_symbol_by_addr(token_addr):
                 return t['symbol']
     return "HzT"
 
+# TODO implement cache
 def get_last_answer_in_feed(w3, asset_info, tx_block_number, tx_index):
     default_result = {
             'answer': 0,
