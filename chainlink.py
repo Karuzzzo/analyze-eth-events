@@ -7,7 +7,8 @@ import time
 import logging
 import os
 from hexbytes import HexBytes 
-# from event_sigs import 
+import event_signatures 
+
 # from eth_account._utils.legacy_transactions import Transaction, encode_transaction
 # from hexbytes import HexBytes
 
@@ -25,7 +26,6 @@ FEEDS_DATA_BY_ADDR = json.load(open(FEED_TO_PAIR_JSON_FILE))
 global FEEDS_DATA_BY_ADDR_AVALANCHE
 FEEDS_DATA_BY_ADDR_AVALANCHE = json.load(open(FEED_TO_PAIR_JSON_FILE_AVALANCHE))
 
-
 def get_feeds_data_by_addr():
     return FEEDS_DATA_BY_ADDR
 
@@ -35,9 +35,11 @@ def get_feeds_data_by_addr_avalanche():
 def get_asset_info(token_addr, market_symbol='ETH'):
     asset_info = None
     for feed in FEEDS_DATA_BY_ADDR:
-        if FEEDS_DATA_BY_ADDR[feed]['pair_name'][-3:] != market_symbol:
+        pair_name = FEEDS_DATA_BY_ADDR[feed]['pair_name']
+        if pair_name[-3:] != market_symbol and pair_name != 'ETH / USD':
             continue 
         _token_address = list(FEEDS_DATA_BY_ADDR[feed]['linked_tokens'].keys())[0]
+        
         if _token_address == token_addr:
             asset_info = FEEDS_DATA_BY_ADDR[feed]['linked_tokens'][_token_address]
             asset_info['price_feed'] = feed
@@ -78,7 +80,9 @@ def get_last_answer_in_feed(w3, asset_info, tx_block_number, tx_index):
 
     if asset_info['symbol'] == 'WETH':
         return default_result
-    
+
+    event_signature_list = event_signatures.get_event_signatures()
+    print(asset_info)
     end_block_number = tx_block_number
     same_block_as_transaction = False
     start_block_number = end_block_number - 2000
@@ -94,7 +98,7 @@ def get_last_answer_in_feed(w3, asset_info, tx_block_number, tx_index):
         event_filter_price_change = w3.eth.filter({
             "fromBlock": start_block_number,
             "toBlock": end_block_number,
-            "topics": [chainlink_transmit_price_change_sig],
+            "topics": [event_signature_list['transmit']],
             "address": asset_info['price_feed']
         })
         entries = event_filter_price_change.get_all_entries()

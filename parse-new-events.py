@@ -24,16 +24,9 @@ import event_signatures
 parser = argparse.ArgumentParser(description='No arguments for realtime mode')
 parser.add_argument('--from-block', type=int, help='submit starting block for liquidation events parsing')
 parser.add_argument('--to-block', type=int, help='submit ending block for liquidation events parsing')
-parser.add_argument('--go-to-past', action="store_false", help="when set, code will parse old")
-
-# GLOBALS (FIXME later)
-w3 = None
-ctoken_abi = None
-comptroller_abi = None
-usdc_abi = None
+parser.add_argument('--go-to-past', action="store_true", help="when set, code will parse old")
 
 tokens_cache = {}
-AGGR = {}
 
 # LOADING FEEDS DATA FROM JSON FILE
 # file can be rebuilt by "chainlink_renew_and_store_feeds_info_in_json()" function
@@ -53,6 +46,7 @@ def main():
     # exit by Ctrl+C
     signal.signal(signal.SIGINT, lambda signal,frame: { print("Interrupt by SIGINT"), sys.exit(0)})
     print('starting')
+    # Connect node
     global w3
     load_dotenv(find_dotenv())
     infuraAddr = os.environ.get("NODE_BASE_ENDPOINT") + os.environ.get("NODE_API_KEY")
@@ -60,41 +54,30 @@ def main():
     if not w3.isConnected():
         print('Node is not connected')
         exit()
-    
+    # Parse events
     ARGS = parser.parse_args()
     # Generate all basic event sigs 
     event_signatures.generate_event_signatures(w3)
-
-    # Instance all handlers
-    deposit_handler = DepositEventHandler(w3)
-    withdraw_handler = WithdrawEventHandler(w3)
-    aave_liquidation_handler = AAVELiquidationEventHandler(w3)
-    global HANDLERS 
-    HANDLERS = [ withdraw_handler, deposit_handler ]
     
-    all_events = event_signatures.get_event_signatures()
+    # VVV...IMPORT NEW HANDLERS HERE...VVV
+    # Instance all handlers
+    global HANDLERS 
+    HANDLERS = [ 
+        DepositEventHandler(w3, eth_limit=50, no_hundred_eth=True), 
+        WithdrawEventHandler(w3, eth_limit=50, no_hundred_eth=True),
+        # AAVELiquidationEventHandler(w3, eth_limit=10)
+    ]
+    list_of_events = list()
 
-    for handler in HANDLERS:
-        # We append to default events all events from new handlers
-        all_events[handler.get_name()] = handler.get_event_signature() 
+    for handler in HANDLERS:    
+        # We also add all signatures from handlers, might use them later 
         event_signatures.add_to_event_sigs(w3, handler.get_name(), handler.get_event_signature())
-    # event_sigs.g
-    # all_first_topics = list(EXISTING_EVENTS.keys())
-    print(all_events)
-    global atoken_abi
-    atoken_abi = json.load(open("consts/AAVE/ABI_aToken.json"))
-    global lending_pool_abi
-    lending_pool_abi = json.load(open("consts/AAVE/ABI_aave_lending_pool.json"))
-    global usdc_abi
-    usdc_abi = json.load(open("consts/ABI_USDC.json")) 
+        list_of_events.append(handler.get_event_signature())
 
-    global AGGR
-
-    if (ARGS.go_to_past):
+    if not ARGS.go_to_past:
         event_filter = w3.eth.filter({
-            # Proxy
             "fromBlock": 'latest',
-            "topics": [list(all_events.values()), None]
+            "topics": [list_of_events, None]
         })
         poll_interval = 15
         while True:
@@ -109,23 +92,26 @@ def main():
             time.sleep(poll_interval)
 
     # ~ 6400 blocks/day
-    start_block = w3.eth.block_number - 6400 * 100
-    end_block = w3.eth.block_number
-    step_size = 10
-    print("Running from {} to {}".format(start_block, end_block))
+    # start_block = w3.eth.block_number - 6400 * 100
+    # end_block = w3.eth.block_number
+    start_block = 14051788
+    end_block = 14053787
+
+    step_size = 200
     current_start_block = start_block
     
     while (current_start_block <= end_block):
-        print("+1")
         current_end_block = current_start_block + step_size - 1
         if current_end_block > end_block:
             current_end_block = end_block
 
+        print("Running from {} to {}".format(current_start_block, current_end_block))
+        
         event_filter = w3.eth.filter({
             # Proxy
             "fromBlock": current_start_block,
             "toBlock": current_end_block,
-            "topics": [list(all_events.values()), None]
+            "topics": [list_of_events, None]
         })
 
         failed = True
@@ -135,7 +121,7 @@ def main():
             failed = True
             try:
                 for event in event_filter.get_all_entries():
-                    print(event)
+                    # print(event)
                     route_event(event)
                 failed = False
                 ntries = 0

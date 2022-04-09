@@ -35,6 +35,7 @@ def analyze_biggest_transfer(w3, token_transfer_events):
         asset_info = chainlink.get_asset_info(token_addr)
         # Get token price to ETH
         transfer_price_info = chainlink.get_last_answer_in_feed(
+            w3,
             asset_info, 
             token_transfer_event['blockNumber'], 
             token_transfer_event['transactionIndex']

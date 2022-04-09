@@ -4,13 +4,14 @@ import event_signatures
 from handlers.handler_interface import handlerInterface
 
 class WithdrawEventHandler(handlerInterface):
-    def __init__(self, w3) -> None:
+    def __init__(self, w3, eth_limit, no_hundred_eth=False) -> None:
         event_sig_text = "Withdrawal(address,bytes32,address,uint256)"
         self.w3 = w3
         self.event_name = 'Withdrawal'
+        self.eth_limit = eth_limit
+        self.no_hundred_eth = no_hundred_eth
         self.event_signature = w3.keccak(text=event_sig_text).hex()
         # Add it to global json w signatures
-        event_signatures.add_to_event_sigs(w3, self.event_name, event_sig_text)
 
     def get_name(self):
         return self.event_name
@@ -25,6 +26,7 @@ class WithdrawEventHandler(handlerInterface):
         # TODO move restrictions to library
         # Exception for 100 ETH, we can't track it directly from tx
         if withdrawal_event.address == '0xA160cdAB225685dA1d56aa342Ad8841c3b53f291':
+            if self.no_hundred_eth: return None
             transfer_event['amount'] = 100 * (10 ** 18)
             transfer_event['decimals'] = 18
             transfer_event['symbol'] = 'ETH'
@@ -42,6 +44,11 @@ class WithdrawEventHandler(handlerInterface):
             print("[ERROR] Unhandled Transfer or something at tx: {}"
             .format(transaction['transactionHash']))
 
+        # This transfer amount converted inside of analyze_biggest_transfer
+        if transfer_event['eth_transfer_amount'] < self.eth_limit:
+            print("want {} have {} at {}".format(transfer_event['eth_transfer_amount'], self.eth_limit, withdrawal_event['transactionHash'].hex()))
+            return None
+
         # This string is already formatted for Telegram
         # `` code, ** - Bold, _ _ - Italic. Hashtag before words(not numbers tho) will make it clickable.  
         text = (
@@ -57,6 +64,6 @@ class WithdrawEventHandler(handlerInterface):
                     transfer_event['eth_transfer_amount']
                 ))
         
-        print("Handler {} formed message: {}, sending to tg...", self.event_name, text)
+        print("Handler {} formed message: {}, sending to tg...".format(self.event_name, text))
         
         telegram_bot.send_msg_to_all(text)

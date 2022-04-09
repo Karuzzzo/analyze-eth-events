@@ -4,17 +4,17 @@ import event_signatures
 from handlers.handler_interface import handlerInterface
 import tx_parser
 import requests
-import datetime
+from datetime import datetime
 
 WETH_ADDRESS = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
 
 class AAVELiquidationEventHandler(handlerInterface):
-    def __init__(self, w3) -> None:
+    def __init__(self, w3, eth_limit) -> None:
             event_sig_text = "LiquidationCall(address,address,address,uint256,uint256,address,bool)"
             self.w3 = w3
             self.event_name = 'AAVELiquidation'
+            self.eth_limit = eth_limit
             self.event_signature = w3.keccak(text=event_sig_text).hex()
-            event_signatures.add_to_event_sigs(w3, self.event_name, event_sig_text)
 
     def get_name(self):
         return self.event_name
@@ -85,16 +85,17 @@ class AAVELiquidationEventHandler(handlerInterface):
         )
 
         # Format output to match the timeline
-        print("###################################################################################")
+        # print("###################################################################################")
         latest_price_change = debt_latest
         if collateral_latest['blockNumber'] >= debt_latest['blockNumber']:
             latest_price_change_bn = collateral_latest
+        # This is for terminal output
 
-            self.formatted_print_price_change(debt_latest, debt_asset_info)
-            self.formatted_print_price_change(collateral_latest, collateral_asset_info)
-        else: 
-            self.formatted_print_price_change(collateral_latest, collateral_asset_info)
-        self.formatted_print_price_change(debt_latest, debt_asset_info)
+        #     self.formatted_print_price_change(debt_latest, debt_asset_info)
+        #     self.formatted_print_price_change(collateral_latest, collateral_asset_info)
+        # else: 
+        #     self.formatted_print_price_change(collateral_latest, collateral_asset_info)
+        #     self.formatted_print_price_change(debt_latest, debt_asset_info)
     
         profit_collateral = calculate_asset_profit(
             liquidation_data['collateral_amount'], 
@@ -112,16 +113,25 @@ class AAVELiquidationEventHandler(handlerInterface):
         
         (flashbots_info, bribe, fbinfo) = get_info_from_flashbots(liquidation_data['txhash'], liquidation_data['blockNumber'])
         
+        total_profit = 0
+        # Filter for limits of ethereum amount 
+        if flashbots_info != None and bribe != None:
+            total_profit = profit_collateral - profit_debt - gasCalculated - bribe
+            if total_profit < self.eth_limit: return None
+        else:
+            total_profit = profit_collateral - profit_debt - gasCalculated
+            if total_profit < self.eth_limit: return None
+
         # Place different strings, if we're dealing with flashbots 
         if flashbots_info != None and bribe != None:
             price_calc_string = ('*Profit:* seized: {:.4f} repayed: {:.4f} pure: {:.4f} fee: {:.4f} bribe {:.4f} ({:.1f}%) total: _{:.4f} ETH_'
                 .format(profit_collateral, profit_debt, (profit_collateral - profit_debt), gasCalculated, bribe, 
                         bribe / (profit_collateral - profit_debt) * 100,
-                        profit_collateral - profit_debt - gasCalculated - bribe))
+                        total_profit))
         else:
             price_calc_string = ('*Profit:* seized: {:.4f} repayed: {:.4f} pure: {:.4f} fee: {:.4f} bribe 0.0000 (0.0%) total: _{:.4f} ETH_'
                 .format(profit_collateral, profit_debt, (profit_collateral - profit_debt), gasCalculated, 
-                        profit_collateral - profit_debt - gasCalculated))
+                        total_profit))
 
         # `` code, ** - Bold, _ _ - Italic. Hashtag before words(not numbers tho) will make it clickable.  
         text = (
@@ -146,7 +156,8 @@ class AAVELiquidationEventHandler(handlerInterface):
                     latest_price_change['txhash'],
                     liquidation_data['blockNumber'] - latest_price_change['blockNumber'],
                 ))
-        print(text)
+
+        print("Handler {} formed message: {}, sending to tg...".format(self.event_name, text))
         telegram_bot.send_msg_to_all(text)
     
 
