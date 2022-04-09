@@ -7,8 +7,6 @@ load_dotenv(find_dotenv())
 import json
 import pprint
 import random
-from handlers.dummy_handler import WHATEVER
-from handlers.tornado_withdraw_handler import WHAT
 
 bot = telebot.TeleBot(os.environ.get("TELEGRAM_API_KEY"))
 USERS_ID_INFO = json.load(open("consts/existing_ids_info.json")) 
@@ -98,8 +96,7 @@ def write_to_json(title, id):
         json.dump(USERS_ID_INFO, json_file, 
                         indent=4,  
                         separators=(',',': '))
-good_text = '`Tornado_deposit`, 13879405 index: 340 Hash: `0x99c335300557237f613845957896b3ff0a63e9654f68b88395c573701f6e040c`'
-bad_text = '*#Tornado_deposit, Block 13879405 index: 340*\nHash: `0x99c335300557237f613845957896b3ff0a63e9654f68b88395c573701f6e040c`\nSender: `0x5367B571f79dfEDB9D3Ba54920E3911a086A4f15`\nAmount: 100.0 ETH => 100.0 ETH'
+
 def send_custom_msg():
     payload = dict()
     payload['chat_id'] = 275916122

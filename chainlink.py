@@ -7,7 +7,7 @@ import time
 import logging
 import os
 from hexbytes import HexBytes 
-
+# from event_sigs import 
 # from eth_account._utils.legacy_transactions import Transaction, encode_transaction
 # from hexbytes import HexBytes
 
@@ -66,6 +66,74 @@ def get_symbol_by_addr(token_addr):
             if taddr == token_addr:
                 return t['symbol']
     return "HzT"
+
+def get_last_answer_in_feed(w3, asset_info, tx_block_number, tx_index):
+    default_result = {
+            'answer': 0,
+            'blockNumber': 0,
+            'txhash': 0,
+            'index': 0,
+            'same_block_as_transaction': False
+        }    
+
+    if asset_info['symbol'] == 'WETH':
+        return default_result
+    
+    end_block_number = tx_block_number
+    same_block_as_transaction = False
+    start_block_number = end_block_number - 2000
+    sanity_counter = 0
+    while True:
+        # If we can't find price in 40000 blocks - something is definitely wrong)
+        sanity_counter = sanity_counter + 1
+        if sanity_counter > 20:
+            print("[ERROR] Unable to find price for {} in feed {}"
+                .format(asset_info['price_feed'], asset_info['price_feed']))
+            return default_result
+
+        event_filter_price_change = w3.eth.filter({
+            "fromBlock": start_block_number,
+            "toBlock": end_block_number,
+            "topics": [chainlink_transmit_price_change_sig],
+            "address": asset_info['price_feed']
+        })
+        entries = event_filter_price_change.get_all_entries()
+        if entries == []:
+            end_block_number = start_block_number
+            start_block_number = end_block_number - 2000
+            continue
+
+        latest_price_event = entries[len(entries)-1]
+        # TODO too much if's, consider refactor?
+        # If it's the same block
+        if latest_price_event['blockNumber'] == tx_block_number:
+            # Index of price change must be lower
+            if latest_price_event['transactionIndex'] > tx_index:
+                # If the only one entry, and it was after liq - skip it
+                if len(entries) == 1:
+                    end_block_number = start_block_number
+                    start_block_number = end_block_number - 2000
+                    continue
+                # If there is something else, we use it instead
+                else:
+                    latest_price_event = entries[len(entries)-2]
+            else:
+                same_block_as_transaction = True
+                # print(
+                #     '[WARN] Price for {} changed in same block as liquidation, possible bundle!'
+                #     '\nprice change index: {}, liquidation index: {}'
+                #         .format(asset_info['symbol'], 
+                #         latest_price_event['transactionIndex'], liquidation_data['index'])
+                #  )
+        
+        return {
+            # convert latest price for asset in event to integer
+            'answer': int(latest_price_event.topics[1].hex(), base=16),
+            'blockNumber': latest_price_event.blockNumber,
+            'txhash': latest_price_event.transactionHash.hex(),
+            'index': latest_price_event.transactionIndex,
+            'same_block_as_transaction': same_block_as_transaction,
+        }
 
 def extract_price_info_from_chainlink_mempool_tx(w3, tx):
     feed_data = FEEDS_DATA_BY_ADDR.get(tx['to'])
