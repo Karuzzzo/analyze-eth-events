@@ -12,7 +12,7 @@ class AAVELiquidationEventHandler(handlerInterface):
     def __init__(self, w3, eth_limit) -> None:
             event_sig_text = "LiquidationCall(address,address,address,uint256,uint256,address,bool)"
             self.w3 = w3
-            self.event_name = 'AAVELiquidation'
+            self.event_name = 'AAVE_liquidation'
             self.eth_limit = eth_limit
             self.event_signature = w3.keccak(text=event_sig_text).hex()
 
@@ -135,7 +135,7 @@ class AAVELiquidationEventHandler(handlerInterface):
 
         # `` code, ** - Bold, _ _ - Italic. Hashtag before words(not numbers tho) will make it clickable.  
         text = (
-            '\n*#AAVE_liquidation, #{} index: {}*'
+            '\n*#{}, #{} index: {}*'
             '\n*Hash:* `{}`' 
             '\n*Borrower:* `{}`'
             '\n*Liquidator:* `{}`'
@@ -145,7 +145,7 @@ class AAVELiquidationEventHandler(handlerInterface):
             '\n*Last price change:* `{}`'
             '\n*Diff in blocks:* {}'
                 .format(
-                    liquidation_data['blockNumber'], liquidation_data['index'],
+                    self.event_name, liquidation_data['blockNumber'], liquidation_data['index'],
                     liquidation_data['txhash'],
                     liquidation_data['borrower'],
                     liquidation_data['liquidator'],

@@ -27,9 +27,22 @@ MADARA_SPEECH = [
             'There are nexuses causal relationships that cannot be separated'
 ]
 
+def send_image_to_all(image, caption):
+    payload = dict()
+    files = dict()
+    monke = 'https://ipfs.io/ipfs/QmRRPWG96cmgTn2qSzjwr2qvfNEuhunv6FNeMFGa9bx6mQ'
+
+    for chat_id in USERS_ID_INFO['users'].values():
+        payload['chat_id'] = chat_id
+        payload['caption'] = caption
+        # IMG can be sent via link
+        # payload['photo'] = monke 
+        files['photo']= image
+        p = requests.post("{}sendPhoto".format(os.environ.get("TELEGRAM_BASE_ADDRESS")), payload, files=files) 
+        print("Sent to the {}".format(payload['chat_id']))
+
 def send_msg_to_all(text):
     payload = dict()
-    # print("Got new text: {}".format(text))
     
     for chat_id in USERS_ID_INFO['users'].values():
         payload['chat_id'] = chat_id

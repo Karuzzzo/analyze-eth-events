@@ -76,7 +76,6 @@ def get_last_answer_in_feed(w3, asset_info, tx_block_number, tx_index):
         return default_result
 
     event_signature_list = event_signatures.get_event_signatures()
-    print(asset_info)
     end_block_number = tx_block_number
     same_block_as_transaction = False
     start_block_number = end_block_number - 2000

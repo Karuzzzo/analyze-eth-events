@@ -7,7 +7,7 @@ class DepositEventHandler(handlerInterface):
     def __init__(self, w3, eth_limit, no_hundred_eth=False) -> None:
         event_sig_text = "Deposit(bytes32,uint32,uint256)"
         self.w3 = w3
-        self.event_name = 'Deposit'
+        self.event_name = 'Tornado_deposit'
         self.eth_limit = eth_limit
         self.no_hundred_eth = no_hundred_eth
         self.event_signature = w3.keccak(text=event_sig_text).hex()
@@ -50,12 +50,12 @@ class DepositEventHandler(handlerInterface):
         # This string is already formatted for Telegram
         # `` code, ** - Bold, _ _ - Italic. Hashtag before words(not numbers tho) will make it clickable.  
         text = (
-            '*#Tornado_deposit, #{} index: {}*'
+            '*#{}, #{} index: {}*'
             '\n*Hash:* `{}`'
             '\n*Sender:* `{}`\n*Amount:* _{} {} => {} ETH_'
             # Overall profit, different strings generated for flashbot transactions 
                 .format(
-                    deposit_event['blockNumber'], deposit_event['transactionIndex'],
+                    self.event_name, deposit_event['blockNumber'], deposit_event['transactionIndex'],
                     deposit_event['transactionHash'].hex(),
                     transfer_event['from'],
                     transfer_event['amount'] / (10 ** transfer_event['decimals']), transfer_event['symbol'],

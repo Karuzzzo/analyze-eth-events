@@ -7,7 +7,7 @@ class WithdrawEventHandler(handlerInterface):
     def __init__(self, w3, eth_limit, no_hundred_eth=False) -> None:
         event_sig_text = "Withdrawal(address,bytes32,address,uint256)"
         self.w3 = w3
-        self.event_name = 'Withdrawal'
+        self.event_name = 'Tornado_withdrawal'
         self.eth_limit = eth_limit
         self.no_hundred_eth = no_hundred_eth
         self.event_signature = w3.keccak(text=event_sig_text).hex()
@@ -46,18 +46,18 @@ class WithdrawEventHandler(handlerInterface):
 
         # This transfer amount converted inside of analyze_biggest_transfer
         if transfer_event['eth_transfer_amount'] < self.eth_limit:
-            print("want {} have {} at {}".format(transfer_event['eth_transfer_amount'], self.eth_limit, withdrawal_event['transactionHash'].hex()))
+            # print("Withdrawwant {} have {} at {}".format(transfer_event['eth_transfer_amount'], self.eth_limit, withdrawal_event['transactionHash'].hex()))
             return None
 
         # This string is already formatted for Telegram
         # `` code, ** - Bold, _ _ - Italic. Hashtag before words(not numbers tho) will make it clickable.  
         text = (
-            '*#Tornado_withdrawal, #{} index: {}*'
+            '*#{}, #{} index: {}*'
             '\n*Hash:* `{}`'
             '\n*Receiver:* `{}`\n*Amount:* _{} {} => {} ETH_'
             # Overall profit, different strings generated for flashbot transactions 
                 .format(
-                    withdrawal_event['blockNumber'], withdrawal_event['transactionIndex'],
+                    self.event_name, withdrawal_event['blockNumber'], withdrawal_event['transactionIndex'],
                     withdrawal_event['transactionHash'].hex(),
                     transfer_event['to'],
                     transfer_event['amount'] / (10 ** transfer_event['decimals']), transfer_event['symbol'],
