@@ -1,8 +1,8 @@
 import signal
 import sys
 import time
+import math
 
-from eth_typing.evm import BlockNumber
 from web3 import Web3
 import json
 from datetime import datetime
@@ -28,7 +28,8 @@ parser = argparse.ArgumentParser(description='No arguments for realtime mode')
 parser.add_argument('--from-block', type=int, help='submit starting block for events parsing')
 parser.add_argument('--to-block', type=int, help='submit ending block for events parsing')
 parser.add_argument('--go-to-past', action="store_true", help="when set, code will parse old")
-
+#  TODO 
+# parser.add_argument('--send-to-telegram')
 tokens_cache = {}
 
 # LOADING FEEDS DATA FROM JSON FILE
@@ -50,6 +51,25 @@ async def log_loop(event_filter, poll_interval):
                 continue
         await asyncio.sleep(poll_interval)
 
+async def log_all(event_filter):
+    failed = True
+    ntries = 0
+    while ((failed or ntries == 0) and ntries < 10):
+        failed = True
+        try:
+            for event in event_filter.get_all_entries():
+                # print(event)
+                await route_event(event)
+            failed = False
+            ntries = 0
+            break
+        except Exception as e:
+            print("[ERROR] {} in handle events: {}. Event: {}".format(type(e).__name__, e, event))
+            traceback.print_exc()
+            print("Sleeping 5 sec...")
+            await asyncio.sleep(5)
+            ntries += 1
+            failed = True
 
 async def route_event(event):
     event_sig = event.topics[0].hex()
@@ -62,16 +82,18 @@ async def route_event(event):
                 await handler.handle_event(event)
             else:
                 handler.handle_event(event)
+            return repr(handler)
+    
+    return None
 
 def main():
     # exit by Ctrl+C
     signal.signal(signal.SIGINT, lambda signal,frame: { print("Interrupt by SIGINT"), sys.exit(0)})
-    print('Starting..')
     # Connect node
     global w3
     load_dotenv(find_dotenv())
-    infuraAddr = os.environ.get("NODE_BASE_ENDPOINT") + os.environ.get("NODE_API_KEY")
-    w3 = Web3(Web3.WebsocketProvider(infuraAddr))
+    nodeAddr = os.environ.get("NODE_BASE_ENDPOINT") + os.environ.get("NODE_API_KEY")
+    w3 = Web3(Web3.WebsocketProvider(nodeAddr))
     if not w3.isConnected():
         print('Node is not connected')
         exit()
@@ -88,16 +110,22 @@ def main():
         DepositEventHandler(w3, eth_limit=30, no_hundred_eth=True), 
         WithdrawEventHandler(w3, eth_limit=30, no_hundred_eth=True),
         AAVELiquidationEventHandler(w3, eth_limit=10),
-        IpfsEventHandler(w3)
+        # IpfsEventHandler(w3)
     ]
-
     list_of_events = list()
+
     for handler in HANDLERS:    
         # We also add all signatures from handlers, might use them later 
-        event_signatures.add_to_event_sigs(w3, handler.get_name(), handler.get_event_signature())
+        event_signatures.add_to_event_sigs(w3, repr(handler), handler.get_event_signature())
         list_of_events.append(handler.get_event_signature())
 
+    print('Listening for: {}'.format(', '.join(map(lambda h: repr(h), HANDLERS))))
+
     if not ARGS.go_to_past:
+
+        print('Started listening for new events...')
+        print("=" * 80)
+
         event_filter = w3.eth.filter({
             "fromBlock": 'latest',
             "topics": [list_of_events, None]
@@ -111,8 +139,9 @@ def main():
                 )
             )
         finally: loop.close()
-    # Implement async for various time intervals aswell
-    exit()
+        
+        exit()
+    # TODO Implement async for various time intervals aswell
     # ~ 6400 blocks/day
     start_block = 14051788 - 6400 * 100
     end_block = w3.eth.block_number
@@ -121,13 +150,19 @@ def main():
 
     step_size = 2000
     current_start_block = start_block
-    
+
+    # Some statistics
+    total_chunks = math.ceil((end_block - start_block) / step_size)
+    current_chunk = 0
+    print("Running from {} to {}, chunk length: {} blocks, total: {} block chunks"
+            .format(start_block, end_block, step_size, total_chunks))
+    print("=" * 80)
+    total_filtered = 0
+
     while (current_start_block <= end_block):
         current_end_block = current_start_block + step_size - 1
         if current_end_block > end_block:
             current_end_block = end_block
-
-        print("Running from {} to {}".format(current_start_block, current_end_block))
         
         event_filter = w3.eth.filter({
             # Proxy
@@ -136,30 +171,31 @@ def main():
             "topics": [list_of_events, None]
         })
 
-        failed = True
-        ntries = 0
+        total_filtered = len(event_filter.get_all_entries())
+
+        print("({} / {} block chunks) running from {} to {}. Processing total of {} events"
+            .format(
+                current_chunk,
+                total_chunks,
+                current_start_block, 
+                current_end_block,
+                total_filtered
+            ))
+
+        loop = asyncio.get_event_loop()
+        # try:
+        loop.run_until_complete(
+            asyncio.gather(
+                log_all(event_filter)
+            )
+        )
+
+        # finally: loop.close()
+        
         # print("Processing blocks from {} to {}".format(current_start_block, current_end_block))
-        while((failed or ntries == 0) and ntries < 10):
-            failed = True
-            try:
-                for event in event_filter.get_all_entries():
-                    # print(event)
-                    route_event(event)
-                failed = False
-                ntries = 0
-                break
-            except Exception as e:
-                print("[ERROR] {} in handle events: {}. Event: {}".format(type(e).__name__, e, event))
-                traceback.print_exc()
-                # print("Sleeping 5 sec...")
-                # time.sleep(6)
-                ntries += 1
-                failed = True
-
-        if (failed == True):
-            print("Skipping blocks from {} to {}, trying next pack".format(current_start_block, current_end_block))
-
+        
         current_start_block = current_end_block + step_size
+        current_chunk = current_chunk + 1
 
 if __name__ == '__main__':
     main()

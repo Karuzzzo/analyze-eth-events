@@ -26,10 +26,11 @@ def analyze_biggest_transfer(w3, token_transfer_events):
     transfer_information = dict()
 
     for token_transfer_event in token_transfer_events:
-        token_amount = tx_parser.get_amount_from_transfer_event(token_transfer_event)
-        token_addr = tx_parser.get_token_from_transfer_event(token_transfer_event, w3)
-        token_from = tx_parser.get_sender_from_transfer_event(token_transfer_event, w3)
-        token_to = tx_parser.get_receiver_from_transfer_event(token_transfer_event, w3)
+        transfer_data = tx_parser.get_data_from_transfer_event(token_transfer_event, w3) 
+        token_amount = transfer_data['amount']
+        token_addr = transfer_data['token']
+        token_from = transfer_data['from']
+        token_to = transfer_data['to']
 
         token_symbol = chainlink.get_symbol_by_addr(token_addr)
         asset_info = chainlink.get_asset_info(token_addr)

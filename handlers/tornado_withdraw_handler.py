@@ -4,18 +4,19 @@ import event_signatures
 from handlers.handler_interface import handlerInterface
 
 class WithdrawEventHandler(handlerInterface):
-    def __init__(self, w3, eth_limit, no_hundred_eth=False) -> None:
+    def __init__(self, w3, eth_limit, no_hundred_eth=False, text_telegram=False) -> None:
         event_sig_text = "Withdrawal(address,bytes32,address,uint256)"
         self.w3 = w3
-        self.event_name = 'Tornado_withdrawal'
+        self.event_name = 'Tornado withdrawal()'
         self.eth_limit = eth_limit
         self.no_hundred_eth = no_hundred_eth
+        self.text_telegram = text_telegram
         self.event_signature = w3.keccak(text=event_sig_text).hex()
         # Add it to global json w signatures
 
-    def get_name(self):
+    def __repr__(self):
         return self.event_name
-    
+
     def get_event_signature(self):
         return self.event_signature
 
@@ -66,4 +67,5 @@ class WithdrawEventHandler(handlerInterface):
         
         print("Handler {} formed message: {}, sending to tg...".format(self.event_name, text))
         
-        telegram_bot.send_msg_to_all(text)
+        if self.text_telegram:
+            telegram_bot.send_msg_to_all(text)

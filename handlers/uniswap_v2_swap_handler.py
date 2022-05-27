@@ -3,14 +3,14 @@ import transfer_parser
 import event_signatures
 from handlers.handler_interface import handlerInterface
 
-class DepositEventHandler(handlerInterface):
-    def __init__(self, w3, eth_limit, no_hundred_eth=False, text_telegram=False) -> None:
-        event_sig_text = "Deposit(bytes32,uint32,uint256)"
+class UniswapV2SwapEventHandler(handlerInterface):
+    def __init__(self, w3, eth_limit, text_telegram=False) -> None:
+        event_sig_text = "Swap(address,uint256,uint256,uint256,uint256,address)"
+
         self.w3 = w3
-        self.event_name = 'Tornado deposit()'
+        self.event_name = 'Uniswap V2 Swap()'
         self.eth_limit = eth_limit
         # Temporary filter, to stop spamming deposits of 100 ETH
-        self.no_hundred_eth = no_hundred_eth
         self.text_telegram = text_telegram
         self.event_signature = w3.keccak(text=event_sig_text).hex()
 

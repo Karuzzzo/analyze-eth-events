@@ -9,36 +9,24 @@ from datetime import datetime
 WETH_ADDRESS = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
 
 class AAVELiquidationEventHandler(handlerInterface):
-    def __init__(self, w3, eth_limit) -> None:
+    def __init__(self, w3, eth_limit, text_telegram=False) -> None:
             event_sig_text = "LiquidationCall(address,address,address,uint256,uint256,address,bool)"
             self.w3 = w3
-            self.event_name = 'AAVE_liquidation'
+            self.event_name = 'AAVE liquidation()'
             self.eth_limit = eth_limit
+            self.text_telegram = text_telegram
             self.event_signature = w3.keccak(text=event_sig_text).hex()
 
-    def get_name(self):
+    def __repr__(self):
         return self.event_name
-    
+
     def get_event_signature(self):
         return self.event_signature
-
-    def parse_data_from_liq_event(self, liquidation_event):
-        data = {}
-        data['blockNumber'] = liquidation_event['blockNumber']
-        data['index'] = liquidation_event['transactionIndex']
-        data['liquidator'] = tx_parser.aave_get_liqAddr(liquidation_event.data, self.w3)
-        data['collateral_amount'] = tx_parser.aave_get_seized_amount(liquidation_event.data)
-        data['collateral_addr'] = self.w3.toChecksumAddress(liquidation_event.topics[1].hex()[-40:])
-        data['debt_amount'] = tx_parser.aave_get_repay_amount(liquidation_event.data)
-        data['debt_addr'] = self.w3.toChecksumAddress(liquidation_event.topics[2].hex()[-40:])
-        data['borrower'] = self.w3.toChecksumAddress(liquidation_event.topics[3].hex()[-40:])
-        data['txhash'] = liquidation_event.transactionHash.hex()
-        return data
 
     def handle_event(self, liquidation_event):
         # Parse all stuff from event
         receipt = self.w3.eth.getTransactionReceipt(liquidation_event['transactionHash'])
-        liquidation_data = self.parse_data_from_liq_event(liquidation_event)
+        liquidation_data = tx_parser.get_data_from_aave_liquidation(liquidation_event, self.w3)
         # Also add gas used from tx receipt
         liquidation_data['txfee'] = int(receipt['effectiveGasPrice'] * receipt['gasUsed'])
         
@@ -158,7 +146,9 @@ class AAVELiquidationEventHandler(handlerInterface):
                 ))
 
         print("Handler {} formed message: {}, sending to tg...".format(self.event_name, text))
-        telegram_bot.send_msg_to_all(text)
+        
+        if self.text_telegram:
+            telegram_bot.send_msg_to_all(text)
     
 
     def get_block_timestamp(self, block_number):
