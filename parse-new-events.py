@@ -27,7 +27,9 @@ import inspect
 parser = argparse.ArgumentParser(description='No arguments for realtime mode')
 parser.add_argument('--from-block', type=int, help='submit starting block for events parsing')
 parser.add_argument('--to-block', type=int, help='submit ending block for events parsing')
-parser.add_argument('--go-to-past', action="store_true", help="when set, code will parse old")
+parser.add_argument('--chunk-size', type=int, help='size of blocks, downloaded simultaneously')
+parser.add_argument('--monitor', action="store_false", help="when set, code will monitor only new events")
+
 #  TODO 
 # parser.add_argument('--send-to-telegram')
 tokens_cache = {}
@@ -38,20 +40,20 @@ FEED_TO_PAIR_JSON_FILE = "consts/chainlink_feed_info_by_addr.json"
 global FEEDS_DATA_BY_ADDR
 FEEDS_DATA_BY_ADDR = json.load(open(FEED_TO_PAIR_JSON_FILE))
 
-async def log_loop(event_filter, poll_interval):
+def log_loop(event_filter, poll_interval):
     while True:
         try:
             for event in event_filter.get_new_entries():
                 # print('routing {}'.format(event))
-                await route_event(event)
+                route_event(event)
         except Exception as e:
                 # TODO add erroneous events handling, skip for now
                 print("[ERROR] {} in handle events: {}. Event: {}".format(type(e).__name__, e, event))
                 traceback.print_exc()
                 continue
-        await asyncio.sleep(poll_interval)
+        time.sleep(poll_interval)
 
-async def log_all(event_filter):
+def log_all(event_filter):
     failed = True
     ntries = 0
     while ((failed or ntries == 0) and ntries < 10):
@@ -59,7 +61,7 @@ async def log_all(event_filter):
         try:
             for event in event_filter.get_all_entries():
                 # print(event)
-                await route_event(event)
+                route_event(event)
             failed = False
             ntries = 0
             break
@@ -67,21 +69,18 @@ async def log_all(event_filter):
             print("[ERROR] {} in handle events: {}. Event: {}".format(type(e).__name__, e, event))
             traceback.print_exc()
             print("Sleeping 5 sec...")
-            await asyncio.sleep(5)
+            time.sleep(5)
             ntries += 1
             failed = True
 
-async def route_event(event):
+def route_event(event):
     event_sig = event.topics[0].hex()
      
     for handler in HANDLERS:
         # If we have handler for this exact topic - we call his function
         if event_sig == handler.get_event_signature():
             # If handler contains heavy requests and async - await it
-            if inspect.iscoroutinefunction(handler.handle_event):
-                await handler.handle_event(event)
-            else:
-                handler.handle_event(event)
+            handler.handle_event(event)
             return repr(handler)
     
     return None
@@ -107,8 +106,8 @@ def main():
     # Instance all handlers
     global HANDLERS 
     HANDLERS = [ 
-        DepositEventHandler(w3, eth_limit=30, no_hundred_eth=True), 
-        WithdrawEventHandler(w3, eth_limit=30, no_hundred_eth=True),
+        DepositEventHandler(w3, eth_limit=30, no_hundred_eth=False), 
+        WithdrawEventHandler(w3, eth_limit=30, no_hundred_eth=False),
         AAVELiquidationEventHandler(w3, eth_limit=10),
         # IpfsEventHandler(w3)
     ]
@@ -121,7 +120,7 @@ def main():
 
     print('Listening for: {}'.format(', '.join(map(lambda h: repr(h), HANDLERS))))
 
-    if not ARGS.go_to_past:
+    if not ARGS.monitor:
 
         print('Started listening for new events...')
         print("=" * 80)
@@ -131,36 +130,32 @@ def main():
             "topics": [list_of_events, None]
         })
         poll_interval = 15
-        loop = asyncio.get_event_loop()
-        try:
-            loop.run_until_complete(
-                asyncio.gather(
-                    log_loop(event_filter, poll_interval)
-                )
-            )
-        finally: loop.close()
         
-        exit()
+        log_loop(event_filter, poll_interval)
+        
     # TODO Implement async for various time intervals aswell
     # ~ 6400 blocks/day
-    start_block = 14051788 - 6400 * 100
-    end_block = w3.eth.block_number
+    block_number = w3.eth.blockNumber
+    start_block = ARGS.from_block or block_number - 6400 * 2
+    end_block = ARGS.to_block or w3.eth.blockNumber
     # start_block = 14051788
     # end_block = 14053787
+    if ARGS.from_block is ARGS.to_block is None:
+        print("No parameters supplied, processing latest two days")
 
-    step_size = 2000
+    chunk_size = ARGS.chunk_size or 2000
     current_start_block = start_block
 
     # Some statistics
-    total_chunks = math.ceil((end_block - start_block) / step_size)
+    total_chunks = math.ceil((end_block - start_block) / chunk_size)
     current_chunk = 0
     print("Running from {} to {}, chunk length: {} blocks, total: {} block chunks"
-            .format(start_block, end_block, step_size, total_chunks))
+            .format(start_block, end_block, chunk_size, total_chunks))
     print("=" * 80)
     total_filtered = 0
 
     while (current_start_block <= end_block):
-        current_end_block = current_start_block + step_size - 1
+        current_end_block = current_start_block + chunk_size - 1
         if current_end_block > end_block:
             current_end_block = end_block
         
@@ -182,19 +177,13 @@ def main():
                 total_filtered
             ))
 
-        loop = asyncio.get_event_loop()
-        # try:
-        loop.run_until_complete(
-            asyncio.gather(
-                log_all(event_filter)
-            )
-        )
+        log_all(event_filter)
 
         # finally: loop.close()
         
         # print("Processing blocks from {} to {}".format(current_start_block, current_end_block))
         
-        current_start_block = current_end_block + step_size
+        current_start_block = current_end_block + chunk_size
         current_chunk = current_chunk + 1
 
 if __name__ == '__main__':
