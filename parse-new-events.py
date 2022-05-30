@@ -97,7 +97,6 @@ def main():
         print('Node is not connected')
         exit()
     
-    # Parse events
     ARGS = parser.parse_args()
     # Generate all basic event sigs 
     event_signatures.generate_event_signatures(w3)
@@ -119,9 +118,8 @@ def main():
         list_of_events.append(handler.get_event_signature())
 
     print('Listening for: {}'.format(', '.join(map(lambda h: repr(h), HANDLERS))))
-
-    if not ARGS.monitor:
-
+    # Realtime mode 
+    if ARGS.monitor:
         print('Started listening for new events...')
         print("=" * 80)
 
@@ -133,13 +131,11 @@ def main():
         
         log_loop(event_filter, poll_interval)
         
-    # TODO Implement async for various time intervals aswell
-    # ~ 6400 blocks/day
+    # 6400 blocks ~= day
     block_number = w3.eth.blockNumber
     start_block = ARGS.from_block or block_number - 6400 * 2
     end_block = ARGS.to_block or w3.eth.blockNumber
-    # start_block = 14051788
-    # end_block = 14053787
+    
     if ARGS.from_block is ARGS.to_block is None:
         print("No parameters supplied, processing latest two days")
 
@@ -152,6 +148,7 @@ def main():
     print("Running from {} to {}, chunk length: {} blocks, total: {} block chunks"
             .format(start_block, end_block, chunk_size, total_chunks))
     print("=" * 80)
+
     total_filtered = 0
 
     while (current_start_block <= end_block):
@@ -160,7 +157,6 @@ def main():
             current_end_block = end_block
         
         event_filter = w3.eth.filter({
-            # Proxy
             "fromBlock": current_start_block,
             "toBlock": current_end_block,
             "topics": [list_of_events, None]
@@ -179,10 +175,6 @@ def main():
 
         log_all(event_filter)
 
-        # finally: loop.close()
-        
-        # print("Processing blocks from {} to {}".format(current_start_block, current_end_block))
-        
         current_start_block = current_end_block + chunk_size
         current_chunk = current_chunk + 1
 
