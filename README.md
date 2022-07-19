@@ -33,7 +33,7 @@ sudo apt install libpython3.9-dev
 Install poetry
 ```
 # docs at: https://python-poetry.org/docs/
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
 ```
 
 ## Clone repo

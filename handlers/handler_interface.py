@@ -10,3 +10,7 @@ class handlerInterface:
     def handle_event(self, event):
         """processes submitted event."""
         pass
+
+    def on_close(self):
+        """closes everything, possibly saving data or something."""
+        pass

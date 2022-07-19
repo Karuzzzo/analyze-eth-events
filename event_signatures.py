@@ -14,7 +14,7 @@ def generate_event_signatures(w3):
 
     all_sigs = {
         'transfer': transfer_event,
-        'transmit': chainlink_transmit_price_event
+        'transmit': chainlink_transmit_price_event,
     }
 
     with open("consts/all_event_signatures.json", 'w') as json_file:

@@ -10,6 +10,7 @@ import os
 from dotenv import load_dotenv, find_dotenv
 import argparse
 import traceback
+from handlers.uniswap_v2_swap_handler import UniswapV2SwapEventHandler
 from web3connect import Web3Connect
 
 from handlers.tornado_deposit_handler import DepositEventHandler
@@ -28,7 +29,7 @@ parser = argparse.ArgumentParser(description='No arguments for realtime mode')
 parser.add_argument('--from-block', type=int, help='submit starting block for events parsing')
 parser.add_argument('--to-block', type=int, help='submit ending block for events parsing')
 parser.add_argument('--chunk-size', type=int, help='size of blocks, downloaded simultaneously')
-parser.add_argument('--monitor', action="store_false", help="when set, code will monitor only new events")
+parser.add_argument('--monitor', action="store_true", help="when set, code will monitor only new events")
 
 #  TODO 
 # parser.add_argument('--send-to-telegram')
@@ -91,7 +92,7 @@ def main():
     # Connect node
     global w3
     load_dotenv(find_dotenv())
-    nodeAddr = os.environ.get("NODE_BASE_ENDPOINT") + os.environ.get("NODE_API_KEY")
+    nodeAddr = os.environ.get("NODE_ENDPOINT")
     w3 = Web3(Web3.WebsocketProvider(nodeAddr))
     if not w3.isConnected():
         print('Node is not connected')
@@ -105,13 +106,13 @@ def main():
     # Instance all handlers
     global HANDLERS 
     HANDLERS = [ 
-        DepositEventHandler(w3, eth_limit=30, no_hundred_eth=False), 
-        WithdrawEventHandler(w3, eth_limit=30, no_hundred_eth=False),
-        AAVELiquidationEventHandler(w3, eth_limit=10),
-        # IpfsEventHandler(w3)
+        # DepositEventHandler(w3, eth_limit=30, no_hundred_eth=False), 
+        # WithdrawEventHandler(w3, eth_limit=30, no_hundred_eth=False),
+        # AAVELiquidationEventHandler(w3, eth_limit=10),
+        # IpfsEventHandler(w3),
+        UniswapV2SwapEventHandler(w3),
     ]
     list_of_events = list()
-
     for handler in HANDLERS:    
         # We also add all signatures from handlers, might use them later 
         event_signatures.add_to_event_sigs(w3, repr(handler), handler.get_event_signature())
@@ -177,6 +178,12 @@ def main():
 
         current_start_block = current_end_block + chunk_size
         current_chunk = current_chunk + 1
+        for handler in HANDLERS:
+            handler.on_update()
+
+    # call on_close for each handler
+    for handler in HANDLERS:
+        handler.on_close()
 
 if __name__ == '__main__':
     main()
