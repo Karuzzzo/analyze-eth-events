@@ -5,7 +5,7 @@ import json
 from handlers.handler_interface import handlerInterface
 
 class UniswapV2SwapEventHandler(handlerInterface):
-    def __init__(self, w3, text_telegram=False) -> None:
+    def __init__(self, w3, text_telegram=False, dump_to="consts/swap_routers.json") -> None:
         event_sig_text = "Swap(address,uint256,uint256,uint256,uint256,address)"
 
         self.w3 = w3
@@ -13,14 +13,14 @@ class UniswapV2SwapEventHandler(handlerInterface):
         self.text_telegram = text_telegram
         self.event_signature = w3.keccak(text=event_sig_text).hex()
         self.event_emitters = dict()
-
+        self.dump_to = dump_to
     def __repr__(self):
         return self.event_name
     
     # Save all data to json
     def on_close(self):
         event_emitters_sorted = dict(sorted(self.event_emitters.items(), key=lambda x: x[1], reverse=True))
-        with open("consts/swap_routers.json", 'w') as json_file:
+        with open(self.dump_to, 'w') as json_file:
             json.dump(event_emitters_sorted, json_file, 
                             indent=4,  
                             separators=(',',': '))
@@ -30,22 +30,21 @@ class UniswapV2SwapEventHandler(handlerInterface):
     # Save all data to json
     def on_update(self):
         event_emitters_sorted = dict(sorted(self.event_emitters.items(), key=lambda x: x[1], reverse=True))
-        with open("consts/swap_routers.json", 'w') as json_file:
+        with open(self.dump_to, 'w') as json_file:
             json.dump(event_emitters_sorted, json_file, 
                             indent=4,  
                             separators=(',',': '))
         print("Handler {} saved to json".format(self.event_name))
-        print("Handler {} deleted".format(self.event_name))
 
 
     def get_event_signature(self):
         return self.event_signature
 
     def handle_event(self, event):
-        receipt = self.w3.eth.getTransactionReceipt(event['transactionHash'])
+        # receipt = self.w3.eth.getTransactionReceipt(event['transactionHash'])
         transaction = self.w3.eth.getTransaction(event['transactionHash'])
         transfer_event = dict()
-        # TODO possible trickery with || or && stuff, think for 5 mins after
+        # TODO possible trickery with || or && stuff, think for 5 mins later
         
         if self.event_emitters.get(transaction['to']) is None:
             self.event_emitters[transaction['to']] = 1

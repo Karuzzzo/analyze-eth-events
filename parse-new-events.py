@@ -110,7 +110,7 @@ def main():
         # WithdrawEventHandler(w3, eth_limit=30, no_hundred_eth=False),
         # AAVELiquidationEventHandler(w3, eth_limit=10),
         # IpfsEventHandler(w3),
-        UniswapV2SwapEventHandler(w3),
+        UniswapV2SwapEventHandler(w3, dump_to="consts/swap_routers_bsc.json"),
     ]
     list_of_events = list()
     for handler in HANDLERS:    
